@@ -32,10 +32,10 @@ It helps users manage personal finances by tracking income, expenses, and wallet
 expense-tracker/
 │── app.py                # Main Streamlit app
 │── models.py             # Database models (SQLAlchemy)
-│── db_setup.py           # Database setup script
+│── auth.py               # User registration and authentication
+│── db.py                 # Database setup and all db functionalities
 │── requirements.txt      # Dependencies
-│── data/
-│   └── sample.csv        # Example transaction file
+│── dashboard.py          # User dashboard
 │── README.md             # Project documentation
 ```
 
@@ -45,8 +45,8 @@ expense-tracker/
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/<your-username>/expense-tracker.git
-   cd expense-tracker
+   git clone https://github.com/milan-roy/Personal-Expense-Tracker.git
+   cd Personal-Expense-Tracker
    ```
 
 2. Create a virtual environment & install dependencies:
@@ -57,8 +57,8 @@ expense-tracker/
    pip install -r requirements.txt
    ```
 
-3. Set up PostgreSQL and update your **database URL** in `db_setup.py`:
-   ```python
+3. Create a .env file in the project root and add your PostgreSQL connection string as 
+```python
    DATABASE_URL = "postgresql://username:password@localhost/expense_tracker"
    ```
 
@@ -72,11 +72,12 @@ expense-tracker/
 ## 📊 CSV Format
 The uploaded CSV should follow this format:
 
-| type     | amount | category | note         | datetime            |
-|----------|--------|----------|--------------|---------------------|
-| income   | 5000   | Salary   | March Salary | 2025-03-01 10:00:00 |
-| expense  | 1200   | Food     | Groceries    | 2025-03-03 18:30:00 |
-| transfer | 2000   | Wallet   | To savings   | 2025-03-05 12:00:00 |
+| Date                | Type     | Category     | Amount | Currency | Memo       | Wallet                |
+| ------------------- | -------- | ------------ | ------ | -------- | ---------- | --------------------- |
+| 07/20/2025, 4:16 PM | Expense  | Food         | -40.00 | INR      | Memo 1     | Wallet 1              |
+| 07/19/2025, 8:47 PM | Income   | Others       |  20.00 | INR      | Memo 2     | Wallet 2              |
+| 07/19/2025, 8:36 PM | Expense  | Travel       | -25.00 | INR      | Memo 3     | Wallet 1 -> Wallet 2  |
+| 07/18/2025, 8:08 PM | Transfer | Transfer     | -20.00 | INR      | Memo 4     | Wallet 1              |
 
 ---
 
