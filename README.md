@@ -1,4 +1,5 @@
 # Personal Expense Tracker
+
 A web-based expense tracker built with Streamlit, SQLAlchemy, and PostgreSQL.
 It helps users manage personal finances by tracking income, expenses, and wallet transfers with ease.
 ---
