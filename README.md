@@ -57,10 +57,7 @@ expense-tracker/
    pip install -r requirements.txt
    ```
 
-3. Create a .env file in the project root and add your PostgreSQL connection string as 
-```python
-   DATABASE_URL = "postgresql://username:password@localhost/expense_tracker"
-   ```
+3. Create a .env file in the project root and add your PostgreSQL DATABASE_URL inside it.
 
 4. Run the app:
    ```bash
@@ -69,7 +66,7 @@ expense-tracker/
 
 ---
 
-## 📊 CSV Format
+## CSV Format
 The uploaded CSV should follow this format:
 
 | Date                | Type     | Category     | Amount | Currency | Memo       | Wallet                |
